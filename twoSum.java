@@ -61,4 +61,4 @@ public class twoSum {
     }
 }
 
-//Try to figure how Hash tables work and the one and two pass solutions as well
+//Try to figure how Hash tables work and the one&two pass solutions as well
