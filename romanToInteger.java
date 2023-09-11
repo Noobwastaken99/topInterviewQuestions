@@ -51,7 +51,7 @@ public class romanToInteger {
     }
 
     public static int solution(String s) {
-        
+        return 0;
     }
     
 }
