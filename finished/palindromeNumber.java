@@ -28,7 +28,6 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 */
 
-import java.util.Arrays;
 
 public class palindromeNumber {
 
@@ -46,7 +45,7 @@ public class palindromeNumber {
     public static boolean solution(int x) {
         int m = reverse(x);
 
-        return x==m;
+        return x == m;
     }
 
     public static int reverse(int n) {
@@ -54,7 +53,7 @@ public class palindromeNumber {
 
         while (n > 0) {
             r = r*10 + n%10;
-            n=n/10;
+            n = n/10;
         }
 
         return r;
