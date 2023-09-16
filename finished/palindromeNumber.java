@@ -1,3 +1,4 @@
+package finished;
 /* Question 9. Palindrome Number (easy)
 Given an integer x, return true if x is a palindrome, and false otherwise.
 
@@ -27,14 +28,36 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 */
 
+import java.util.Arrays;
+
 public class palindromeNumber {
 
     public static void main(String[] args) {
+        int test1 = 121;
+        int test2 = -121;
+        int test3 = 10;
+
+        System.out.println("1: " + solution(test1));
+        System.out.println("2: " + solution(test2));
+        System.out.println("3: " + solution(test3));
 
     }
 
     public static boolean solution(int x) {
-        return false;
+        int m = reverse(x);
+
+        return x==m;
+    }
+
+    public static int reverse(int n) {
+        int r = 0;
+
+        while (n > 0) {
+            r = r*10 + n%10;
+            n=n/10;
+        }
+
+        return r;
     }
     
 }
