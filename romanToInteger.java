@@ -46,11 +46,27 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 public class romanToInteger {
 
     public static void main(String[] args) {
+        String s1 = "III";
+        String s2 = "LVIII";
+        String s3 = "MCMXCIV";
 
+        System.out.println(solution(s1));
+        System.out.println(solution(s2));
+        System.out.println(solution(s3));
     }
 
     public static int solution(String s) {
-        return 0;
+        int num = 0;
+        String rn = "IVXLCDM";
+        char[] arr = s.toCharArray();
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == rn.charAt(0)) {
+                num += 1;
+            }
+        }
+
+        return num;
     }
     
 }
