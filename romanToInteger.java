@@ -61,9 +61,35 @@ public class romanToInteger {
         char[] arr = s.toCharArray();
 
         for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] == rn.charAt(6)) {
+                num += 1000;
+            }
+
+            if (arr[i] == rn.charAt(5)) {
+                num += 500;
+            }
+
+            if (arr[i] == rn.charAt(4)) {
+                num += 100;
+            }
+
+            if (arr[i] == rn.charAt(3)) {
+                num += 50;
+            }
+
+            if (arr[i] == rn.charAt(2)) {
+                num += 10;
+            }
+
+            if (arr[i] == rn.charAt(1)) {
+                num += 5;
+            }
+
             if (arr[i] == rn.charAt(0)) {
                 num += 1;
             }
+
         }
 
         return num;
