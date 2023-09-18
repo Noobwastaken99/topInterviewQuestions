@@ -60,38 +60,58 @@ public class romanToInteger {
         String rn = "IVXLCDM";
         char[] arr = s.toCharArray();
 
-        for (int i = 0; i < arr.length; i++) {
+// I can be placed before V (5) and X (10) to make 4 and 9. 
+// X can be placed before L (50) and C (100) to make 40 and 90. 
+// C can be placed before D (500) and M (1000) to make 400 and 900.
 
+        for (int i = 0; i < arr.length; i++) {
+            // This is M
             if (arr[i] == rn.charAt(6)) {
                 num += 1000;
             }
-
+            // This is D
             if (arr[i] == rn.charAt(5)) {
                 num += 500;
             }
 
-            if (arr[i] == rn.charAt(4)) {
+            // This is C
+            if (arr[i] == rn.charAt(4) && (i+1) < arr.length && arr[i+1] == rn.charAt(6)) {
+                num += 900;
+            } else if (arr[i] == rn.charAt(4) && (i+1) < arr.length && arr[i+1] == rn.charAt(5)) {
+                num += 400;
+            } else if (arr[i] == rn.charAt(4)) {
                 num += 100;
             }
 
+            // This is L
             if (arr[i] == rn.charAt(3)) {
                 num += 50;
             }
 
-            if (arr[i] == rn.charAt(2)) {
+            // This is X
+            if (arr[i] == rn.charAt(2) && (i+1) < arr.length && arr[i+1] == rn.charAt(4)) {
+                num += 90;
+            } else if (arr[i] == rn.charAt(2) && (i+1) < arr.length && arr[i+1] == rn.charAt(3)) {
+                num += 40;
+            } else if (arr[i] == rn.charAt(2)) {
                 num += 10;
             }
 
+            // This is V
             if (arr[i] == rn.charAt(1)) {
                 num += 5;
             }
 
-            if (arr[i] == rn.charAt(0)) {
+            // This is I
+            if (arr[i] == rn.charAt(0) && (i+1) < arr.length && arr[i+1] == rn.charAt(2)) {
+                num += 9;
+            } else if (arr[i] == rn.charAt(0) && (i+1) < arr.length && arr[i+1] == rn.charAt(1)) {
+                num += 4;
+            } else if (arr[i] == rn.charAt(0)) {
                 num += 1;
             }
-
         }
-
+        
         return num;
     }
     
