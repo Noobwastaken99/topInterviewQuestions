@@ -28,8 +28,9 @@ public class longestCommonPrefix {
         String[] strs1 = {"flower","flow","flight"};
         String[] strs2 = {"dog","racecar","car"};
         String[] strs3 = {"aaa","aa","aaa"};
+        String[] strs4 = {"aac","acab","aa","abba","aa"};
 
-        System.out.println(solution(strs3));
+        System.out.println(solution(strs4));
         //System.out.println(solution(strs2));
     }
 
@@ -43,16 +44,20 @@ public class longestCommonPrefix {
 
         for (int i = 0; i < strs.length; i++) {
             for (int j = 0; j<strs[i].length(); j++) {
-                if (strs[0].charAt(j) == strs[i].charAt(j) && strs[i].length() <= cap) {
+                if (j < strs[0].length() && strs[0].charAt(j) == strs[i].charAt(j) && strs[i].length() <= cap) {
                     str += strs[0].charAt(j);
-                } else if (strs[0].charAt(j) != strs[i].charAt(j)) {
+                } else if (j < strs[0].length() && strs[0].charAt(j) != strs[i].charAt(j)) {
                     str = str.substring(0, j);
                     j = strs[i].length();
+                    // System.out.println(cap);
                 }
             }
             if (strs[i].length() < str.length()) {
                 cap = strs[i].length();
                 str = str.substring(0, cap);
+                // System.out.println(cap);
+            } else if (str.length() < 1) {
+                return "";
             }
         }
 
