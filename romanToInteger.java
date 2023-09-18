@@ -60,10 +60,6 @@ public class romanToInteger {
         String rn = "IVXLCDM";
         char[] arr = s.toCharArray();
 
-// I can be placed before V (5) and X (10) to make 4 and 9. 
-// X can be placed before L (50) and C (100) to make 40 and 90. 
-// C can be placed before D (500) and M (1000) to make 400 and 900.
-
         for (int i = 0; i < arr.length; i++) {
             // This is M
             if (arr[i] == rn.charAt(6)) {
@@ -77,8 +73,10 @@ public class romanToInteger {
             // This is C
             if (arr[i] == rn.charAt(4) && (i+1) < arr.length && arr[i+1] == rn.charAt(6)) {
                 num += 900;
+                i++;
             } else if (arr[i] == rn.charAt(4) && (i+1) < arr.length && arr[i+1] == rn.charAt(5)) {
                 num += 400;
+                i++;
             } else if (arr[i] == rn.charAt(4)) {
                 num += 100;
             }
@@ -91,8 +89,10 @@ public class romanToInteger {
             // This is X
             if (arr[i] == rn.charAt(2) && (i+1) < arr.length && arr[i+1] == rn.charAt(4)) {
                 num += 90;
+                i++;
             } else if (arr[i] == rn.charAt(2) && (i+1) < arr.length && arr[i+1] == rn.charAt(3)) {
                 num += 40;
+                i++;
             } else if (arr[i] == rn.charAt(2)) {
                 num += 10;
             }
@@ -105,13 +105,15 @@ public class romanToInteger {
             // This is I
             if (arr[i] == rn.charAt(0) && (i+1) < arr.length && arr[i+1] == rn.charAt(2)) {
                 num += 9;
+                i++;
             } else if (arr[i] == rn.charAt(0) && (i+1) < arr.length && arr[i+1] == rn.charAt(1)) {
                 num += 4;
+                i++;
             } else if (arr[i] == rn.charAt(0)) {
                 num += 1;
             }
         }
-        
+
         return num;
     }
     
