@@ -25,11 +25,24 @@ strs[i] consists of only lowercase English letters.
 public class longestCommonPrefix {
 
     public static void main(String[] args) {
+        String[] strs1 = {"flower","flow","flight"};
+        String[] strs2 = {"dog","racecar","car"};
 
+        System.out.println(solution(strs1));
+        System.out.println(solution(strs2));
     }
 
     public static String solution(String[] strs) {
-        return strs.toString();
+        if (strs.length == 1 || strs[0].charAt(0) != strs[1].charAt(0)) {
+            return "";
+        }
+        int x = 0;
+
+        for (int i = 0; i < strs[0].length(); i++) {
+
+        }
+
+        return strs[0].substring(0, x);
     }
 
 }
