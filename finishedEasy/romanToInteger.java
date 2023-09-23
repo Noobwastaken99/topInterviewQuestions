@@ -1,4 +1,4 @@
-package finished;
+package finishedEasy;
 /* Question 13. Roman to Integer (easy)
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
