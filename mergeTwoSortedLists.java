@@ -43,7 +43,26 @@ public class mergeTwoSortedLists {
     }
 
     public static ListNode solution(ListNode list1, ListNode list2) {
-        return list1;
+        ListNode list3 = new ListNode();
+        ListNode r = list3;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                list3.next = list1;
+                list3 = list3.next;
+                list1 = list1.next;
+            } else if (list1.val >= list2.val) {
+                list3.next = list2;
+                list3 = list3.next;
+                list2 = list2.next;
+            }
+        }
+        if (list1 != null) {
+            list3.next = list1;
+        }
+        if (list2 != null) {
+            list3.next = list2;
+        }
+        return r.next;
     }
     
 }
