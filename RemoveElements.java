@@ -51,11 +51,27 @@ Constraints:
 public class RemoveElements {
 
     public static void main(String[] args) {
+        int[] test1 = new int[] {3,2,2,3};
+        int[] test2 = new int[] {0,1,2,2,3,0,4,2};
 
+        System.out.println(solution(test1, 3));
     }
 
     public static int solution(int[] nums, int val) {
-        return 0;
+        int[] nums2 = new int[nums.length];
+        int k = 0;
+        for (int i=0; i<nums.length; i++) {
+            if (nums[i] != val) {
+                nums2[k] = nums[i];
+                k++;
+            }
+        }
+
+        for (int i=0; i<nums.length; i++) {
+            nums[i] = nums2[i];
+        }
+
+        return k;
     }
     
 }
