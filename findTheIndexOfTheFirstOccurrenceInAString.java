@@ -23,11 +23,19 @@ haystack and needle consist of only lowercase English characters.
 public class findTheIndexOfTheFirstOccurrenceInAString {
 
     public static void main(String[] args) {
+        String haystack1 = "sadbutsad";
+        String needle1 = "sad";
+        String haystack2 = "leetcode";
+        String needle2 = "leeto";
 
+        System.out.println(solution(haystack1, needle1));
+        System.out.println(solution(haystack2, needle2));
     }
 
     public static int solution(String haystack, String needle) {
-        return 0;
+        if (haystack.contains(needle)) {
+            return haystack.indexOf(needle);
+        }
+        return -1;
     }
-    
 }
