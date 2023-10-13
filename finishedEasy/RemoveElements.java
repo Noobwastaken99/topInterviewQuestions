@@ -56,21 +56,22 @@ public class RemoveElements {
         int[] test2 = new int[] {0,1,2,2,3,0,4,2};
 
         System.out.println(solution(test1, 3));
+        System.out.println(solution(test2, 2));
     }
 
     public static int solution(int[] nums, int val) {
-        int[] nums2 = new int[nums.length];
+        // int[] nums2 = new int[nums.length];
         int k = 0;
-        for (int i=0; i<nums.length; i++) {
-            if (nums[i] != val) {
-                nums2[k] = nums[i];
-                k++;
-            }
-        }
+        // for (int i=0; i<nums.length; i++) {
+        //     if (nums[i] != val) {
+        //         nums2[k] = nums[i];
+        //         k++;
+        //     }
+        // }
 
-        for (int i=0; i<nums.length; i++) {
-            nums[i] = nums2[i];
-        }
+        // for (int i=0; i<nums.length; i++) {
+        //     nums[i] = nums2[i];
+        // }
 
         return k;
     }

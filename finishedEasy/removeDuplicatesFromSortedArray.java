@@ -52,38 +52,39 @@ public class removeDuplicatesFromSortedArray {
         int[] test1 = new int[] {1,1,2};
         int[] test2 = new int[] {0,0,1,1,1,2,2,3,3,4};
 
+        System.out.println(solution(test1));
         System.out.println(solution(test2));
     }
 
     public static int solution(int[] nums) {
-        int[] nums2 = new int[nums.length];
+        // int[] nums2 = new int[nums.length];
         int k = 0;
 
-        if (nums.length <= 1) {
-            return nums.length;
-        }
+        // if (nums.length <= 1) {
+        //     return nums.length;
+        // }
 
-        for (int i=0; i<nums.length; i++) {
-            if (i+1 == nums.length && nums[i] != nums[i-1]) {
-                nums2[k] = nums[i];
-                k++;
-            } else if (i+1 < nums.length && nums[i] != nums[i+1]) {
-                nums2[k] = nums[i];
-                k++;
-            }
-        }
+        // for (int i=0; i<nums.length; i++) {
+        //     if (i+1 == nums.length && nums[i] != nums[i-1]) {
+        //         nums2[k] = nums[i];
+        //         k++;
+        //     } else if (i+1 < nums.length && nums[i] != nums[i+1]) {
+        //         nums2[k] = nums[i];
+        //         k++;
+        //     }
+        // }
 
-        if (k == 0) {
-            nums2[0] = nums[0];
-            k++;
-        } else if (nums[nums.length-1] == nums[nums.length-2]) {
-            nums2[k] = nums[nums.length-1];
-            k++;
-        }
+        // if (k == 0) {
+        //     nums2[0] = nums[0];
+        //     k++;
+        // } else if (nums[nums.length-1] == nums[nums.length-2]) {
+        //     nums2[k] = nums[nums.length-1];
+        //     k++;
+        // }
 
-        for (int i=0; i<nums.length; i++) {
-            nums[i] = nums2[i];
-        }
+        // for (int i=0; i<nums.length; i++) {
+        //     nums[i] = nums2[i];
+        // }
 
         return k;
     }
